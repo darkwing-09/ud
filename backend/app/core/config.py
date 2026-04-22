@@ -42,6 +42,16 @@ class Settings(BaseSettings):
     REDIS_RESULT_DB: int = 3
 
     # ── JWT ───────────────────────────────────────────────────
+
+    @field_validator('DATABASE_URL')
+    @classmethod
+    def fix_database_url_protocol(cls, v: str) -> str:
+        if v.startswith('postgres://'):
+            return v.replace('postgres://', 'postgresql+asyncpg://', 1)
+        if v.startswith('postgresql://') and 'asyncpg' not in v:
+            return v.replace('postgresql://', 'postgresql+asyncpg://', 1)
+        return v
+
     JWT_ALGORITHM: str = "HS256"
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     JWT_REFRESH_TOKEN_EXPIRE_DAYS: int = 30
