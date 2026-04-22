@@ -1,0 +1,6 @@
+import{c as n,r as d,j as e,l as u}from"./index-CasWlb8H.js";/**
+ * @license lucide-react v0.364.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const x=n("Eye",[["path",{d:"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z",key:"rwhkz3"}],["circle",{cx:"12",cy:"12",r:"3",key:"1v7zrd"}]]),c=d.forwardRef(({className:i,type:a,leftIcon:s,rightIcon:t,error:r,...l},o)=>e.jsxs("div",{className:"relative w-full",children:[s&&e.jsx("span",{className:"absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none [&_svg]:size-4",children:s}),e.jsx("input",{type:a,className:u("flex h-9 w-full rounded-lg border border-input bg-input px-3 py-1 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50",s&&"pl-9",t&&"pr-9",r&&"border-destructive focus-visible:ring-destructive/40",i),ref:o,...l}),t&&e.jsx("span",{className:"absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground [&_svg]:size-4",children:t}),r&&e.jsx("p",{className:"mt-1 text-xs text-destructive",children:r})]}));c.displayName="Input";export{x as E,c as I};
