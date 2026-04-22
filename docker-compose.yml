@@ -3,8 +3,8 @@ version: "3.9"
 services:
   api:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: educore_api
     ports:
       - "8000:8000"
@@ -23,8 +23,8 @@ services:
 
   worker:
     build:
-      context: ./backend
-      dockerfile: Dockerfile.worker
+      context: .
+      dockerfile: backend/Dockerfile.worker
     container_name: educore_worker
     env_file:
       - ./backend/.env
@@ -41,8 +41,8 @@ services:
 
   beat:
     build:
-      context: ./backend
-      dockerfile: Dockerfile.worker
+      context: .
+      dockerfile: backend/Dockerfile.worker
     container_name: educore_beat
     env_file:
       - ./backend/.env
@@ -57,8 +57,8 @@ services:
 
   flower:
     build:
-      context: ./backend
-      dockerfile: Dockerfile.worker
+      context: .
+      dockerfile: backend/Dockerfile.worker
     container_name: educore_flower
     env_file:
       - ./backend/.env
