@@ -52,6 +52,16 @@ class Settings(BaseSettings):
             return v.replace('postgresql://', 'postgresql+asyncpg://', 1)
         return v
 
+
+    @field_validator('REDIS_URL')
+    @classmethod
+    def fix_redis_url_protocol(cls, v: str) -> str:
+        # Some providers give redis://:password@host:port
+        # async-redis is fine with this usually, but let's ensure it starts correctly
+        if v.startswith('redis://') or v.startswith('rediss://'):
+            return v
+        return f'redis://{v}'
+
     JWT_ALGORITHM: str = "HS256"
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     JWT_REFRESH_TOKEN_EXPIRE_DAYS: int = 30
